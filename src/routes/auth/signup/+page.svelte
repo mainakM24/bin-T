@@ -6,7 +6,7 @@
 	import { Label } from '$lib/components/ui/label';
 	import Separator from '$lib/components/ui/separator/Separator.svelte';
 	import Chrome from 'lucide-svelte/icons/chrome';
-	import { page } from "$app/stores"
+	import { page } from '$app/stores';
 </script>
 
 <div class="flex h-screen w-screen items-center justify-center">
@@ -17,13 +17,18 @@
 		</Card.Header>
 
 		<Card.Content>
-			<Button class="w-full p-5" on:click={()=> {signIn('google', {callbackUrl: `${$page.url.origin}/home`})}}>
+			<Button
+				class="w-full p-5"
+				on:click={() => {
+					signIn('google', { callbackUrl: `${$page.url.origin}/home` });
+				}}
+			>
 				<Chrome class="mr-2 h-5 w-5" />
 				Sign Up with Google
 			</Button>
-			
+
 			<Separator />
-			
+
 			<div class="mt-5 flex flex-col gap-2 space-y-1.5">
 				<div>
 					<Label for="email">Email</Label>
